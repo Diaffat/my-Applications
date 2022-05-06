@@ -20,6 +20,7 @@ namespace WindowsForms_App21
         SqlCommand cmd;
         SqlDataAdapter adpt;
         DataTable dt;
+        int ID;
 
 
         public Registration()
@@ -104,6 +105,45 @@ namespace WindowsForms_App21
                 MessageBox.Show(ex.Message);
             }
            
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtName.Text =dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtFName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtDesign.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtID.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+            radioButtonMale.Checked = true;
+            radioButtonFemale.Checked = false;
+            if(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString()=="Female")
+            {
+
+                radioButtonMale.Checked = false;
+                radioButtonFemale.Checked = true;
+            }
+            txtAdress.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("Update employee set");
+               
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
