@@ -49,6 +49,9 @@
             this.groupBoxOperation = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBoxRegis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBoxOperation.SuspendLayout();
@@ -56,6 +59,8 @@
             // 
             // groupBoxRegis
             // 
+            this.groupBoxRegis.Controls.Add(this.txtSearch);
+            this.groupBoxRegis.Controls.Add(this.label6);
             this.groupBoxRegis.Controls.Add(this.dataGridView1);
             this.groupBoxRegis.Controls.Add(this.txtAdress);
             this.groupBoxRegis.Controls.Add(this.label5);
@@ -87,7 +92,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(81, 252);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(448, 192);
-            this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // txtAdress
@@ -96,7 +101,7 @@
             this.txtAdress.Multiline = true;
             this.txtAdress.Name = "txtAdress";
             this.txtAdress.Size = new System.Drawing.Size(448, 20);
-            this.txtAdress.TabIndex = 16;
+            this.txtAdress.TabIndex = 7;
             this.txtAdress.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label5
@@ -117,7 +122,7 @@
             this.radioButtonFemale.Location = new System.Drawing.Point(462, 149);
             this.radioButtonFemale.Name = "radioButtonFemale";
             this.radioButtonFemale.Size = new System.Drawing.Size(67, 19);
-            this.radioButtonFemale.TabIndex = 14;
+            this.radioButtonFemale.TabIndex = 6;
             this.radioButtonFemale.TabStop = true;
             this.radioButtonFemale.Text = "Female";
             this.radioButtonFemale.UseVisualStyleBackColor = true;
@@ -128,7 +133,7 @@
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(176, 20);
-            this.txtID.TabIndex = 13;
+            this.txtID.TabIndex = 4;
             // 
             // label3
             // 
@@ -156,7 +161,7 @@
             this.txtDesign.Multiline = true;
             this.txtDesign.Name = "txtDesign";
             this.txtDesign.Size = new System.Drawing.Size(176, 20);
-            this.txtDesign.TabIndex = 9;
+            this.txtDesign.TabIndex = 2;
             // 
             // labeldesign
             // 
@@ -174,7 +179,7 @@
             this.txtFName.Multiline = true;
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(176, 20);
-            this.txtFName.TabIndex = 7;
+            this.txtFName.TabIndex = 1;
             // 
             // labelFname
             // 
@@ -192,7 +197,7 @@
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(176, 20);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 3;
             // 
             // label2
             // 
@@ -211,7 +216,7 @@
             this.radioButtonMale.Location = new System.Drawing.Point(353, 149);
             this.radioButtonMale.Name = "radioButtonMale";
             this.radioButtonMale.Size = new System.Drawing.Size(53, 19);
-            this.radioButtonMale.TabIndex = 3;
+            this.radioButtonMale.TabIndex = 5;
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Male";
             this.radioButtonMale.UseVisualStyleBackColor = true;
@@ -222,7 +227,7 @@
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(176, 20);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 0;
             // 
             // label1
             // 
@@ -242,13 +247,14 @@
             this.btnSave.Location = new System.Drawing.Point(6, 69);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(215, 43);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBoxOperation
             // 
+            this.groupBoxOperation.Controls.Add(this.btnExport);
             this.groupBoxOperation.Controls.Add(this.btnDelete);
             this.groupBoxOperation.Controls.Add(this.btnUpdate);
             this.groupBoxOperation.Controls.Add(this.btnSave);
@@ -268,9 +274,10 @@
             this.btnDelete.Location = new System.Drawing.Point(6, 212);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(215, 43);
-            this.btnDelete.TabIndex = 4;
+            this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -280,10 +287,42 @@
             this.btnUpdate.Location = new System.Drawing.Point(6, 142);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(215, 43);
-            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Location = new System.Drawing.Point(6, 283);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(215, 43);
+            this.btnExport.TabIndex = 3;
+            this.btnExport.Text = "Export in excel";
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(182, 226);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(347, 20);
+            this.txtSearch.TabIndex = 8;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(25, 226);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 17);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Search record by name :";
             // 
             // Registration
             // 
@@ -326,5 +365,8 @@
         private System.Windows.Forms.GroupBox groupBoxOperation;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnExport;
     }
 }
